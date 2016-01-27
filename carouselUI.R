@@ -3,7 +3,7 @@
 
 # \dots() are a list of HTML tag elements, e.g. list(div(), div())
 
-#     in www/css/styles.css
+#/*     in www/css/styles.css:    */
 #    .carousel-indicators li {
 #        background-color: #DDD;
 #        background-color: rgba(70,70,70,.25);
