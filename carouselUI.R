@@ -34,7 +34,7 @@
 carouselUI <- function(..., data.interval=10000, data.ride="carousel"){
     contents <- list(...)
     contents <- contents[[1]]
-    # The each frame corresponds to one level of a list
+    # Each frame corresponds to one level of a list
     active <- list(div(class="item active", contents[[1]]))
     items <- lapply(contents[2:length(contents)], function(elm) {
         div(class="item", elm)
