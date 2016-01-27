@@ -2,6 +2,8 @@
 # Adapted by JEK from https://github.com/dcurrier/carouselPanel/blob/master/carouselPanel.R
 
 # \dots() are a list of HTML tag elements, e.g. list(div(), div())
+# data.interval is a number, in milliseconds
+# data.ride is either "carousel" or NA; unclear if this works 
 
 #/*     in www/css/styles.css:    */
 #    .carousel-indicators li {
@@ -29,7 +31,7 @@
 #        padding: 0px 17px;
 #    }
 
-carouselUI <- function(..., auto.advance){
+carouselUI <- function(..., data.interval=10000, data.ride="carousel"){
     contents <- list(...)
     contents <- contents[[1]]
     # The each frame corresponds to one level of a list
@@ -40,7 +42,7 @@ carouselUI <- function(..., auto.advance){
     # A random string that always starts with a letter
     carouselID <- paste0(sample(c(letters,LETTERS), 1), paste0(sample(c(letters,LETTERS,rep(0:9,3)), 15, replace=TRUE),collapse=""),collapse="")
     #Set up carousel
-    div(id=paste0("carousel-", carouselID), class="carousel slide", "data-interval"=as.character(auto.advance),
+    div(id=paste0("carousel-", carouselID), class="carousel slide", "data-interval"=as.character(data.interval), "data-ride"=as.character(data.ride), 
         # Carousel Inner Div - contains the content to display            
         div(class="carousel-inner", style="padding-bottom:40px;", active, items),
 
