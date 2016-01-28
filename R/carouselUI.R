@@ -6,13 +6,14 @@
 #'@param data.interval Milliseconds to pause before auto advancing (numeric).
 #'@param data.ride Either \code{carousel} or \code{NA}; unclear if this works.
 #'@return HTML code with class \code{shiny.tag} that can be passed to \code{uiOutput}. 
-#'@note 'Adapted by JEK from https://github.com/dcurrier/carouselPanel/blob/master/carouselPanel.R
+#' @author Jon Katz
+#'@note Adapted by JEK from \url{https://github.com/dcurrier/carouselPanel/blob/master/carouselPanel.R}
 #'@examples
 #'c.slides <- lapply(1:5, function(x) div(h3(style='text-align:center;',paste('Slide', x))))
 #'carouselUI(slides=c.slides, data.interval=5000, data.ride=FALSE)
 #'
 #'\dontrun{
-#'/*     in www/css/styles.css:    */
+#'/*     place in www/css/styles.css:    */
 #'    .carousel-indicators li {
 #'        background-color: #DDD;
 #'        background-color: rgba(70,70,70,.25);

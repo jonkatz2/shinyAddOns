@@ -13,6 +13,7 @@
 #' @param popTrigger Trigger for popover. In c('hover','focus','click','manual').
 #' @param colWidths Length 2 numeric vector specifying width of help button column and width of input function column. Should sum to 12.
 #' @return HTML code. 
+#' @author Jon Katz
 #' @note Requires Eric Bailey's shinyBS package (available from CRAN).
 #' @examples
 #'    popoverInput(
