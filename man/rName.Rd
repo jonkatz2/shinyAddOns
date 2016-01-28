@@ -11,14 +11,20 @@ rName(char = 16, ext = NULL)
 
 \item{ext}{The optional extension, starting with a dot e.g. '.txt' (character).}
 }
+\value{
+A length 1 character vector that can be used to name HTML elements or files.
+}
 \description{
-Generate names composed of random characters and numbers. There is no guarantee names won't collide, but they are guaranteed to start with a letter.
+Generate names composed of random characters and numbers. There is no guarantee names won't collide, but they are guaranteed to start with a letter. The ratio of letters to LETTERS to numbers should be pretty close to even (26:26:30).
 }
 \note{
 Kind of similar to \code{basename(tempfile("",""))}, but less rigorous and not hex based.
 }
 \examples{
 rName()
+}
+\author{
+Jon Katz
 }
 \keyword{manip}
 

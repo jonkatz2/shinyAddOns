@@ -54,5 +54,8 @@ popoverInput(
        helpStyle='padding-top:0.5em;'
    )
 }
+\author{
+Jon Katz
+}
 \keyword{manip}
 
