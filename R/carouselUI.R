@@ -1,7 +1,7 @@
 # Make a dynamic carousel for use with renderUI() and uiOutput() 
 # Adapted by JEK from https://github.com/dcurrier/carouselPanel/blob/master/carouselPanel.R
 
-# \dots() are a list of HTML tag elements, e.g. list(div(), div())
+# \dots are a list of HTML tag elements, e.g. list(div(), div())
 # data.interval is a number, in milliseconds
 # data.ride is either "carousel" or NA; unclear if this works 
 
