@@ -1,0 +1,10 @@
+Package: shinyAddOns
+Type: Package
+Title: A few convenience functions for shiny packages
+Version: 0.1
+Imports: shiny, shinyBS
+Date: 2016-01-28
+Author: Jon Katz
+Maintainer: Jon Katz <jonkatz2@gmail.com>
+Description: Simplify code for adding popovers, dynamic carousels
+License: GPL-3
