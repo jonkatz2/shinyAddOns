@@ -1,7 +1,7 @@
 # Make a dynamic carousel for use with renderUI() and uiOutput() 
 # Adapted by JEK from https://github.com/dcurrier/carouselPanel/blob/master/carouselPanel.R
 
-# \dots are a list of HTML tag elements, e.g. list(div(), div())
+# slides is a list of HTML tag elements, e.g. list(div(), div())
 # data.interval is a number, in milliseconds
 # data.ride is either "carousel" or NA; unclear if this works 
 
@@ -31,16 +31,15 @@
 #        padding: 0px 17px;
 #    }
 
-carouselUI <- function(..., data.interval=10000, data.ride="carousel"){
-    contents <- list(...)
-    contents <- contents[[1]]
-    # Each frame corresponds to one level of a list
-    active <- list(div(class="item active", contents[[1]]))
-    items <- lapply(contents[2:length(contents)], function(elm) {
-        div(class="item", elm)
+carouselUI <- function(slides, data.interval=10000, data.ride="carousel"){
+    if(!is.list(slides)) stop("'slides' must be a list in which each element becomes a slide.")
+    # Each slide corresponds to one level of a list
+    active <- list(div(class="item active", slides[[1]]))
+    items <- lapply(slides[2:length(slides)], function(x) {
+        div(class="item", x)
     })
     # A random string that always starts with a letter
-    carouselID <- paste0(sample(c(letters,LETTERS), 1), paste0(sample(c(letters,LETTERS,rep(0:9,3)), 15, replace=TRUE),collapse=""),collapse="")
+    carouselID <- rName()
     #Set up carousel
     div(id=paste0("carousel-", carouselID), class="carousel slide", "data-interval"=as.character(data.interval), "data-ride"=as.character(data.ride), 
         # Carousel Inner Div - contains the content to display            
@@ -69,7 +68,7 @@ carouselUI <- function(..., data.interval=10000, data.ride="carousel"){
         mapply(function(i){
            list(tag('li', list(class='', "data-slide-to"=paste(i),
               "data-target"=paste0("#carousel-", carouselID))) )
-        }, 1:(length(contents)-1), SIMPLIFY=F, USE.NAMES=F),
+        }, 1:(length(slides)-1), SIMPLIFY=F, USE.NAMES=F),
         HTML("</ol>")
     )
 }
