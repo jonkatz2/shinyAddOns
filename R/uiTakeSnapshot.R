@@ -15,20 +15,50 @@
 #' @examples
 #' \dontrun{
 #' # Must be called within a shiny app
+#' library(shiny)
 #' ui <- fluidPage(
-#'     textInput("main", "Plot title:"),
-#'     numericInput("randn", 'Number of Random Values:')
-#'     plotOutput('outplot')
+#'     textInput("main", "Plot title:", value="First Plot"),
+#'     numericInput("randn", 'Number of Random Values:', value=10, min=1, step=1),
+#'     column(1, actionButton('submit', 'Submit')),
+#'     column(1, actionButton('reset', 'Previous Settings')),
+#'     div(style='clear:both;',
+#'         column(9, plotOutput('outplot')),
+#'         column(3, htmlOutput('snapshot', container=tags$pre, class='shiny-text-output'))
+#'     )
 #' )
 #' 
 #' server <- function(input, output, session) {
+#'     snapshot <- list()
+#'    
+#'     observe({
+#'         input$reset
+#'         if(length(snapshot) > 0) {
+#'             s.el <- length(snapshot)
+#'             if(length(snapshot) > 1) snapshot <- snapshot[(s.el - 1):s.el]
+#'             uiSetSnapshot(snapshot[[1]], session)
+#'         }
+#'         NULL
+#'     })
+#' 
 #'     output$outplot <- renderPlot({
-#'         input.funs <- c(main='textInput', randn='numericInput')
-#'         snapshot <- uiTakeSnapshot(input.funs, environment())
-#'         values <- rnorm(input$randn)
-#'         plot(values, main=input$main)
+#'         input$submit
+#'         isolate({
+#'             input.funs <- c(main='textInput', randn='numericInput')
+#'             snapshot <<- c(snapshot, list(uiTakeSnapshot(input.funs, environment())))
+#'             values <- rnorm(input$randn)
+#'             plot(values, main=input$main)
+#'         })
+#'     })
+#'     
+#'     output$snapshot <- renderPrint({
+#'         input$submit
+#'         input$reset
+#'         if(length(snapshot)>1) {
+#'             print(snapshot[[length(snapshot)-1]])
+#'         } else print(snapshot[[length(snapshot)]])
 #'     })
 #' } 
+#' shinyApp(ui, server)
 #' }
 #' @keywords misc
 #' @export 
