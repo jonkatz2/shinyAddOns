@@ -9,4 +9,8 @@
 These functions aren't united by anything they share other than
 that they fill a need in my personal apps.
 }
+\author{
+Jon Katz
+}
+\keyword{package}
 

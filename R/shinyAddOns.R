@@ -6,4 +6,6 @@
 #'
 #' @docType package
 #' @name shinyAddOns
+#' @author Jon Katz
+#' @keywords package
 NULL
