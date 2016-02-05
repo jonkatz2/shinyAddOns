@@ -3,3 +3,6 @@
 export(carouselUI)
 export(popoverInput)
 export(rName)
+export(uiSetSnapshot)
+export(uiTakeSnapshot)
+export(with_callAttr)
