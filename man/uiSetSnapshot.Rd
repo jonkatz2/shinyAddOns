@@ -22,8 +22,8 @@ Bulk Set UI Element Values Given A Named List Of Input Types And Values
 # Must be called within a shiny app
 ui <- fluidPage(
     textInput("main", "Plot title:"),
-    numericInput("randn", 'Number of Random Values:')
-    actionButton('reset', 'Previous Plot')
+    numericInput("randn", 'Number of Random Values:'),
+    actionButton('reset', 'Previous Plot'),
     plotOutput('outplot')
 )
 
