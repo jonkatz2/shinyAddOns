@@ -2,8 +2,8 @@
 #'  
 #' Make a dynamic carousel for use with shiny::renderUI() and shiny::uiOutput(). 
 #'  
-#' @param slides A list of HTML tag elements, e.g. \code{list(shiny::div(), shiny::div())}.
-#' @param data.interval Milliseconds to pause before auto advancing (numeric).
+#' @param slides A list of HTML tag elements, e.g. \code{list(div(), div())}.
+#' @param data.interval Milliseconds to pause before auto advancing (numeric), or 'false' for manual advance only.
 #' @param data.ride Either \code{carousel} or \code{NA}; unclear if this works.
 #' @return HTML code with class \code{shiny.tag} that can be passed to \code{uiOutput}. 
 #' @author Jon Katz

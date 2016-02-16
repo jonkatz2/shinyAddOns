@@ -7,9 +7,9 @@
 carouselUI(slides, data.interval = 10000, data.ride = "carousel")
 }
 \arguments{
-\item{slides}{A list of HTML tag elements, e.g. \code{list(shiny::div(), shiny::div())}.}
+\item{slides}{A list of HTML tag elements, e.g. \code{list(div(), div())}.}
 
-\item{data.interval}{Milliseconds to pause before auto advancing (numeric).}
+\item{data.interval}{Milliseconds to pause before auto advancing (numeric), or 'false' for manual advance only.}
 
 \item{data.ride}{Either \code{carousel} or \code{NA}; unclear if this works.}
 }

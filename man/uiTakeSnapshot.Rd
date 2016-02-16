@@ -14,7 +14,7 @@ uiTakeSnapshot(inputs, env)
 \value{
 A list of lists, with variable content according to the following structure:
 \describe{
-#'     \item{inputId}{\describe{
+    \item{inputId}{\describe{
         \item{type}{Input function, as a character string.}
         \item{value}{Value of the UI input at time of function call.}
     }}

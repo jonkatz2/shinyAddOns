@@ -6,7 +6,7 @@
 #' @details The output is designed to easily re-create the current state of the UI, setting values with the appropriate \code{update__Input} function. Note that it is not possible to set a \code{fileInput} value, but it is possible to store the name of the uploaded file.
 #' @return A list of lists, with variable content according to the following structure:
 #' \describe{
-#' #'     \item{inputId}{\describe{
+#'     \item{inputId}{\describe{
 #'         \item{type}{Input function, as a character string.}
 #'         \item{value}{Value of the UI input at time of function call.}
 #'     }}
