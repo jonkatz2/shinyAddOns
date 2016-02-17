@@ -44,7 +44,7 @@ popoverInput <- function(
     ...,
     helpText,
     divStyle=NULL,
-    helpStyle='padding-top:1.5em',
+    helpStyle='padding-top:1.5em;text-align:center;',
     popTrigger='hover',
     colWidths=c(2,10)
 ) {

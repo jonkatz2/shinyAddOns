@@ -1,6 +1,6 @@
 #' with_callAttr
 
-#' Capture the System Call For Functions That Don't Already Do So
+#' @description Capture the System Call For Functions That Don't Already Do So
 #' @param expr An expression to evaluate and capture as a call.
 #' @param f The frame number, specified as an integer. Passed directly to \code{sys.call}.
 #' @return The expected output of \code{expr} with an attribute named 'call', accessible with \code{attr(expr, 'call')}.
