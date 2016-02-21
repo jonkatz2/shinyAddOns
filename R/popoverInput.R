@@ -119,9 +119,15 @@ popoverInput2 <- function(
     cStyle='clear:both;'
 ) {
     fnParams <- list(...)
-    container(style=cStyle,
-        shiny::HTML(paste0('<i id=', paste0(id,'Help'), ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
-        shinyBS::bsPopover(id=paste0(id,'Help'), title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
-        shiny::span(style='float:left;', do.call(fnType,c(list(inputId=id,label=label), fnParams)))
-    )
+    if(missing(helpText)) {
+        container(style="padding-left:1.3em;",
+            do.call(fnType,c(list(inputId=id,label=label), fnParams))
+        )
+    } else {
+        container(style=cStyle,
+            shiny::HTML(paste0('<i id=', paste0(id,'Help'), ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
+            shinyBS::bsPopover(id=paste0(id,'Help'), title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
+            shiny::span(style='float:left;', do.call(fnType,c(list(inputId=id,label=label), fnParams)))
+        )
+    }
 }
