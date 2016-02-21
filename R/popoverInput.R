@@ -120,7 +120,7 @@ popoverInput2 <- function(
 ) {
     fnParams <- list(...)
     container(style=cStyle,
-        shiny::HTML(paste0('<i id=', paste0(id,'Help'), ' class="fa ', fa,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
+        shiny::HTML(paste0('<i id=', paste0(id,'Help'), ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
         shinyBS::bsPopover(id=paste0(id,'Help'), title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
         shiny::span(style='float:left;', do.call(fnType,c(list(inputId=id,label=label), fnParams)))
     )
