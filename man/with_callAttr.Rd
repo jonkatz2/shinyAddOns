@@ -2,8 +2,7 @@
 % Please edit documentation in R/with_callAttr.R
 \name{with_callAttr}
 \alias{with_callAttr}
-\title{with_callAttr
-Capture the System Call For Functions That Don't Already Do So}
+\title{with_callAttr}
 \usage{
 with_callAttr(expr, f)
 }
@@ -16,7 +15,6 @@ with_callAttr(expr, f)
 The expected output of \code{expr} with an attribute named 'call', accessible with \code{attr(expr, 'call')}.
 }
 \description{
-with_callAttr
 Capture the System Call For Functions That Don't Already Do So
 }
 \examples{

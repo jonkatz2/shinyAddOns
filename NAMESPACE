@@ -2,6 +2,7 @@
 
 export(carouselUI)
 export(popoverInput)
+export(popoverInput2)
 export(rName)
 export(uiSetSnapshot)
 export(uiTakeSnapshot)
