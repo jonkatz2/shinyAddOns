@@ -72,7 +72,7 @@ popoverInput <- function(
 #' @param id InputID for shiny element (character).
 #' @param label Input label (character).
 #' @param \dots Additional named arguments to input function.
-#' @param helpText Text to place in popover (character).
+#' @param helpText Text to place in popover (character). Omit to align an helpless input with a helpful input.
 #' @param fa.icon Icon name from font awesome, default is "fa-question-circle".
 #' @param fa.color Color of icon; defaults to bootstrap link color.
 #' @param padding.top Padding to align the help icon vertically with input label.
@@ -83,7 +83,7 @@ popoverInput <- function(
 #' @author Jon Katz
 #' @note Requires Eric Bailey's shinyBS package (available from CRAN).
 #' @examples
-#'    popoverInput(
+#'    popoverInput2(
 #'        checkboxGroupInput, 
 #'        'lyrOpts', 
 #'        'Options:',
@@ -96,8 +96,7 @@ popoverInput <- function(
 #'        selected=c('clip','projection'), 
 #'        inline=TRUE,
 #'        helpText="To download a layer from a website check \"Paste URL\". You may also clip or project all rasters to match this one. If the layer contains only boundary or projection information check \"No Data\".",
-#'        divStyle='padding-top:1em;padding-bottom:1em;',
-#'        helpStyle='padding-top:0.5em;'
+#'        padding.top="1em'
 #'    )
 #' @keywords manip
 #' @export
@@ -126,7 +125,8 @@ popoverInput2 <- function(
         container(style=cStyle,
             shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
             shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
-            shiny::span(style='float:left;', do.call(fnType, fnParams))
+            span(do.call(fnType, fnParams))
+#            shiny::span(style='float:left;', do.call(fnType, fnParams))
         )
     }
 }
