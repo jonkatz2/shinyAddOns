@@ -71,8 +71,11 @@ uiTakeSnapshot <- function(inputs, env) {
     input.vals <- lapply(input.vals, function(x) eval(parse(text=x), envir=env))
     # consolidate the input type and the value
     inputs.l <- lapply(1:length(inputs.v), function(x) {
-        if(inputs.v[[x]] == 'fileInput') list(type=inputs.v[[x]], value=input.vals[[x]]$name)
-        else list(type=inputs.v[[x]], value=input.vals[[x]])
+        if(inputs.v[[x]] == 'fileInput') {
+            list(type=inputs.v[[x]], value=input.vals[[x]]$name)
+        } else if(inputs.v[[x]] %in% c('dateInput', 'dateRangeInput')) {
+            list(type=inputs.v[[x]], value=as.character(input.vals[[x]]))
+        } else list(type=inputs.v[[x]], value=input.vals[[x]])
     })
     # transfer input ids
     names(inputs.l) <- names(inputs.v)
