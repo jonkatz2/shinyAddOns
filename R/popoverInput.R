@@ -136,6 +136,6 @@ popoverInput2 <- function(
                 span(do.call(fnType, fnParams))
     #            shiny::span(style='float:left;', do.call(fnType, fnParams))
             )
-        )
+        }
     }
 }
