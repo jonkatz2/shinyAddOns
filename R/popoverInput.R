@@ -122,11 +122,20 @@ popoverInput2 <- function(
         )
     } else {
         rid <- paste0(rName(),'Help')
-        container(style=cStyle,
-            shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
-            shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
-            span(do.call(fnType, fnParams))
-#            shiny::span(style='float:left;', do.call(fnType, fnParams))
+        if(fnType == checkboxInput) {
+            container(style=cStyle,
+                shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
+                shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
+#                span(do.call(fnType, fnParams))
+                shiny::span(style='float:left;', do.call(fnType, fnParams))
+            )
+        } else {
+            container(style=cStyle,
+                shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
+                shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
+                span(do.call(fnType, fnParams))
+    #            shiny::span(style='float:left;', do.call(fnType, fnParams))
+            )
         )
     }
 }
