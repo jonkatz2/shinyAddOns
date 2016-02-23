@@ -83,6 +83,8 @@ uiSetSnapshot <- function(snapshot, sess){
             selectInput=shiny::updateSelectInput,
             checkboxGroupInput=shiny::updateCheckboxGroupInput, 
             radioButtons=shiny::updateRadioButtons,
+            dateInput=shiny::updateDateInput,
+            dateRangeInput=shiny::updateDateRangeInput,
             fileInput=fiErr
         )
         # Safeguard the call constructor to avoid using NULL as uf
