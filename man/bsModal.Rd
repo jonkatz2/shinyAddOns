@@ -34,4 +34,5 @@ Eric Bailey
 \seealso{
 \href{http://getbootstrap.com/}{Twitter Bootstrap 3}
 }
+\keyword{manip}
 
