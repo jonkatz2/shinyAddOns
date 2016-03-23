@@ -96,7 +96,7 @@ popoverInput <- function(
 #'        selected=c('clip','projection'), 
 #'        inline=TRUE,
 #'        helpText="To download a layer from a website check \"Paste URL\". You may also clip or project all rasters to match this one. If the layer contains only boundary or projection information check \"No Data\".",
-#'        padding.top="1em'
+#'        padding.top="1em"
 #'    )
 #' @keywords manip
 #' @export
