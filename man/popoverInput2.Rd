@@ -4,19 +4,14 @@
 \alias{popoverInput2}
 \title{popoverInput2}
 \usage{
-popoverInput2(fnType, id, label, ..., helpText,
-  fa.icon = "fa-question-circle", fa.color = "#337ab7",
-  padding.top = "0.3em", popTrigger = "hover", container = shiny::div,
-  cStyle = "clear:both;")
+popoverInput2(fnType, ..., helpText, fa.icon = "fa-question-circle",
+  fa.color = "#337ab7", padding.top = "0.3em", popTrigger = "hover click",
+  container = shiny::div, cStyle = "clear:both;")
 }
 \arguments{
 \item{fnType}{function or function name (character) of desired input, e.g. textInput or 'textInput'}
 
-\item{id}{InputID for shiny element (character).}
-
-\item{label}{Input label (character).}
-
-\item{helpText}{Text to place in popover (character).}
+\item{helpText}{Text to place in popover (character). Omit to align an helpless input with a helpful input.}
 
 \item{fa.icon}{Icon name from font awesome, default is "fa-question-circle".}
 
@@ -30,6 +25,10 @@ popoverInput2(fnType, id, label, ..., helpText,
 
 \item{cStyle}{Inline CSS for main container returned (character or NULL).}
 
+\item{id}{InputID for shiny element (character).}
+
+\item{label}{Input label (character).}
+
 \item{\dots}{Additional named arguments to input function.}
 }
 \value{
@@ -42,7 +41,7 @@ Place a help icon with popover text next to a shiny input function. Both the hel
 Requires Eric Bailey's shinyBS package (available from CRAN).
 }
 \examples{
-popoverInput(
+popoverInput2(
        checkboxGroupInput,
        'lyrOpts',
        'Options:',
@@ -55,8 +54,7 @@ popoverInput(
        selected=c('clip','projection'),
        inline=TRUE,
        helpText="To download a layer from a website check \\"Paste URL\\". You may also clip or project all rasters to match this one. If the layer contains only boundary or projection information check \\"No Data\\".",
-       divStyle='padding-top:1em;padding-bottom:1em;',
-       helpStyle='padding-top:0.5em;'
+       padding.top="1em'
    )
 }
 \author{

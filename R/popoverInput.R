@@ -111,7 +111,7 @@ popoverInput2 <- function(
     fa.icon='fa-question-circle',
     fa.color='#337ab7',
     padding.top='0.3em',
-    popTrigger='hover',
+    popTrigger='hover click',
     container=shiny::div,
     cStyle='clear:both;'
 ) {
