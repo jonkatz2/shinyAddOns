@@ -7,7 +7,7 @@
 #' @param title The title to appear at the top of the modal
 #' @param trigger The id of a button or link that will open the modal.
 #' @param \dots UI elements to include within the modal
-#' @param class Class to customize look via CSS
+#' @param class Class to customize look via CSS. \code{NULL} for the default \code{shinyBS} look, or a named vector or list with one or more classes applied to fade, content, header, close (the ``x'' at upper right), title, body, footer, and btn elements.  
 #' @param size Optional What size should the modal be? (small or large)
 #' @author Eric Bailey
 #' @details See \code{\link[shinyBS]{Modals}} for more information about how to use \code{bsModal} with the rest of the Modals family. The \code{class} argument was added by Jon Katz.
@@ -32,15 +32,20 @@ bsModal <- function (id, title, trigger, ..., class=NULL, size)
     } else {
         size <- "modal-dialog"
     }
-    bsTag <- shiny::tags$div(class = paste("modal sbs-modal fade", class), 
+    user.class <- rep(NULL, 8)
+    names(user.class) <- c("fade", "content", "header", "close", "title", "body", "footer", "btn")
+    if(!is.null(class)) {
+        for(i in names(class)) user.class[[i]] <- tryCatch(class[[i]], error=function(e) NULL)
+    } 
+    bsTag <- shiny::tags$div(class = paste("modal sbs-modal fade", user.class[["fade"]]), 
         id = id, tabindex = "-1", `data-sbs-trigger` = trigger, 
-        shiny::tags$div(class = size, shiny::tags$div(class = paste("modal-content", class), 
-            shiny::tags$div(class = paste("modal-header", class), shiny::tags$button(type = "button", 
-                class = paste("close", class), `data-dismiss` = "modal", shiny::tags$span(shiny::HTML("&times;"))), 
-                shiny::tags$h4(class = "modal-title", title)), 
-            shiny::tags$div(class = paste("modal-body", class), list(...)), 
-            shiny::tags$div(class = paste("modal-footer", class), shiny::tags$button(type = "button", 
-                class = paste("btn btn-default", class), `data-dismiss` = "modal", 
+        shiny::tags$div(class = size, shiny::tags$div(class = paste("modal-content", user.class[["content"]]), 
+            shiny::tags$div(class = paste("modal-header", user.class[["header"]]), shiny::tags$button(type = "button", 
+                class = paste("close", user.class[["close"]]), `data-dismiss` = "modal", shiny::tags$span(shiny::HTML("&times;"))), 
+                shiny::tags$h4(class = paste("modal-title", user.class[["title"]]), title)), 
+            shiny::tags$div(class = paste("modal-body", user.class[["body"]]), list(...)), 
+            shiny::tags$div(class = paste("modal-footer", user.class[["footer"]]), shiny::tags$button(type = "button", 
+                class = paste("btn btn-default", user.class[["btn"]]), `data-dismiss` = "modal", 
                 "Close")))))
     htmltools::attachDependencies(bsTag, shinyBS:::shinyBSDep)
 }

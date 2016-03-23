@@ -13,7 +13,7 @@ bsModal(id, title, trigger, ..., class = NULL, size)
 
 \item{trigger}{The id of a button or link that will open the modal.}
 
-\item{class}{Class to customize look via CSS}
+\item{class}{Class to customize look via CSS. \code{NULL} for the default \code{shinyBS} look, or a named vector or list with one or more classes applied to fade, content, header, close (the ``x'' at upper right), title, body, footer, and btn elements.}
 
 \item{size}{Optional What size should the modal be? (small or large)}
 
