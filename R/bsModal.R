@@ -32,8 +32,7 @@ bsModal <- function (id, title, trigger, ..., class=NULL, size)
     } else {
         size <- "modal-dialog"
     }
-    user.class <- rep(NULL, 8)
-    names(user.class) <- c("fade", "content", "header", "close", "title", "body", "footer", "btn")
+    user.class <- list("fade"=character(), "content"=character(), "header"=character(), "close"=character(), "title"=character(), "body"=character(), "footer"=character(), "btn"=character())
     if(!is.null(class)) {
         for(i in names(class)) user.class[[i]] <- tryCatch(class[[i]], error=function(e) NULL)
     } 
