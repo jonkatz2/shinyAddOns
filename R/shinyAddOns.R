@@ -8,4 +8,6 @@
 #' @name shinyAddOns
 #' @author Jon Katz
 #' @keywords package
+#' @import shinyBS
+#' @import shiny
 NULL
