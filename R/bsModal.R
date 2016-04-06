@@ -1,7 +1,7 @@
 #' 
-#' bsModal
+#' bsModal2
 #' 
-#' \code{bsModal} is used within the UI to create a modal window. 
+#' \code{bsModal2} is used within the UI to create a modal window. 
 #' 
 #' @param id A unique identifier for the modal window
 #' @param title The title to appear at the top of the modal
@@ -10,7 +10,7 @@
 #' @param class Class to customize look via CSS. \code{NULL} for the default \code{shinyBS} look, or a named vector or list with one or more classes applied to fade, content, header, close (the ``x'' at upper right), title, body, footer, and btn elements.  
 #' @param size Optional What size should the modal be? (small or large)
 #' @author Eric Bailey
-#' @details See \code{\link[shinyBS]{Modals}} for more information about how to use \code{bsModal} with the rest of the Modals family. The \code{class} argument was added by Jon Katz.
+#' @details See \code{\link[shinyBS]{Modals}} for more information about how to use the parent function, \code{bsModal}, with the rest of the Modals family. The \code{class} argument was added by Jon Katz.
 #' 
 #' @note Run \code{bsExample("Modals")} for an example of \code{bsModal} functionality. 
 #' @seealso \href{http://getbootstrap.com/}{Twitter Bootstrap 3}
@@ -19,7 +19,7 @@
 #' 
 #' 
 
-bsModal <- function (id, title, trigger, ..., class=NULL, size) 
+bsModal2 <- function (id, title, trigger, ..., class=NULL, size) 
 {
     if (!missing(size)) {
         if (size == "large") {
