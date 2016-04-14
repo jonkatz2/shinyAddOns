@@ -124,8 +124,8 @@ popoverInput2 <- function(
         rid <- paste0(rName(),'Help')
         if(identical(fnType, checkboxInput)) {
             container(style=cStyle,
-                shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0em; margin:0px 8px; color:', fa.color,'";></i>')),
-                shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
+                div(style='float:left;', shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0.3em; color:', fa.color,'";></i>')),
+                shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body'))),
                 do.call(fnType, fnParams)
             )
         } else {
