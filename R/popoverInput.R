@@ -126,7 +126,8 @@ popoverInput2 <- function(
             container(style=cStyle,
                 shiny::HTML(paste0('<i id=', rid, ' class="fa ', fa.icon,'" style="float:left; padding:',padding.top, ' 0em; margin:0px 8px; color:', fa.color,'";></i>')),
                 shinyBS::bsPopover(id=rid, title=NULL, content=helpText, trigger=popTrigger, options=list(container='body')),
-                do.call(fnType, fnParams)
+                do.call(checkboxInputSpan, fnParams)
+#                do.call(fnType, fnParams)
             )
         } else {
             container(style=cStyle,
