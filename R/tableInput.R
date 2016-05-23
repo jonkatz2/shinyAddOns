@@ -34,7 +34,7 @@ tableInput <- function(inputId, label, nrow, ncol, dimnames, col.inputs, class=N
     col.names <- paste0('<th>', dimnames[[2]], '</th>')
     rn <- names(dimnames[[1]])
     if(is.null(rn)) rn <- ''
-    row.names <- paste0('<td>', c(rn, dimnames[[1]]), '&emsp</td>')
+    row.names <- paste0('<td>', c(rn, dimnames[[1]]), '</td>')
     
     fun.args <- lapply(1:length(fun.args), function(x) c(list(inputId=inputIds[x], label=''), fun.args[[x]]))
     table.data <- lapply(1:(nrow*ncol), function(x) paste0('<td>', do.call(colfun[x], fun.args[[x]]), '</td>'))
@@ -43,7 +43,7 @@ tableInput <- function(inputId, label, nrow, ncol, dimnames, col.inputs, class=N
     table.data <- cbind(row.names, table.data)
     table.html <- sapply(1:(nrow+1), function(x) paste0('  <tr>\n    ', paste0(table.data[x,], collapse='\n    '), '\n  </tr>'))
     
-    HTML(paste0('<table class="', class,'">', paste0(table.html, collapse='\n  '), '</table>'))
+    HTML(paste0('<table id=inputId', if(!is.null(class)) {paste0('class="', class, '"')}, '>', paste0(table.html, collapse='\n  '), '</table>'))
 }    
     
     
