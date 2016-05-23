@@ -1,14 +1,28 @@
-
-#tableInput(inputId='test', label='test table', nrow=4, ncol=2, 
-#    dimnames = list(
-#        c(paste('row', 1:4)), 
-#        c(paste('col', 1:2))
-#    ),
-#    col.inputs <- list(
-#        inumericInput=list(value=NA),
-#        iradioButtons=list(choices=c('yes', 'no'))
-#    )
-#)
+#' tableInput
+#' Create a series of label-less inputs in a table envrironment with rownames and colnames.
+#' @param inputId The inputId for the table.
+#' @param label The label to display for the table.
+#' @param nrow Number of rows the table will display.
+#' @param ncolNumber of columns the table will display.
+#' @param dimnames List of names for the table dimensions. rownames may be named, name for colnames will not be used.
+#' @param col.inputs Character vector of input types, with one value per column.
+#' @param class Optional class to assign to the table (for css formatting).
+#' @export
+#' @author Jon Katz
+#' @examples
+#' \dontrun{
+#'tableInput(inputId='test', label='test table', nrow=4, ncol=2, 
+#'    dimnames = list(
+#'        c(paste('row', 1:4)), 
+#'        c(paste('col', 1:2))
+# '   ),
+#'    col.inputs <- list(
+#'        inumericInput=list(value=NA),
+# '       iradioButtons=list(choices=c('yes', 'no'))
+# '   )
+#')
+#'}
+#' @keywords misc
 
 
 tableInput <- function(inputId, label, nrow, ncol, dimnames, col.inputs, class=NULL) {
