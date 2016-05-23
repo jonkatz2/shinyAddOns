@@ -2,8 +2,7 @@
 % Please edit documentation in R/tableInput.R
 \name{tableInput}
 \alias{tableInput}
-\title{tableInput
-Create a series of label-less inputs in a table envrironment with rownames and colnames.}
+\title{Create a series of label-less inputs in a table envrironment with rownames and colnames.}
 \usage{
 tableInput(inputId, label, nrow, ncol, dimnames, col.inputs, class = NULL)
 }
@@ -16,26 +15,23 @@ tableInput(inputId, label, nrow, ncol, dimnames, col.inputs, class = NULL)
 
 \item{dimnames}{List of names for the table dimensions. rownames may be named, name for colnames will not be used.}
 
-\item{col.inputs}{Character vector of input types, with one value per column.}
+\item{col.inputs}{Named list of input types, with one element per column. Sublist elements should be the named arguments to each input type. The shinyAddOn 'inline' inputs are recommended (inumericInput, itextInput, iradioButtons).}
 
 \item{class}{Optional class to assign to the table (for css formatting).}
 
 \item{ncolNumber}{of columns the table will display.}
 }
 \description{
-tableInput
 Create a series of label-less inputs in a table envrironment with rownames and colnames.
 }
 \examples{
-\dontrun{
 tableInput(inputId='test', label='test table', nrow=4, ncol=2,
    dimnames = list(
-       c(paste('row', 1:4)),
+       rows=c(paste('row', 1:4)),
        c(paste('col', 1:2))
    col.inputs <- list(
        inumericInput=list(value=NA),
 )
-}
 }
 \author{
 Jon Katz

@@ -2,6 +2,9 @@
 
 export(bsModal2)
 export(carouselUI)
+export(inumericInput)
+export(iradioButtons)
+export(itextInput)
 export(popoverInput)
 export(popoverInput2)
 export(rName)
