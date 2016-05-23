@@ -34,7 +34,7 @@ tableInput <- function(inputId, label, nrow, ncol, dimnames, col.inputs, class=N
     col.names <- paste0('<th>', dimnames[[2]], '</th>')
     rn <- names(dimnames[[1]])
     if(is.null(rn)) rn <- ''
-    row.names <- paste0('<td>', c(rn, dimnames[[1]]), '</td>')
+    row.names <- paste0('<td style="margin-right:16px;">', c(rn, dimnames[[1]]), '</td>')
     
     fun.args <- lapply(1:length(fun.args), function(x) c(list(inputId=inputIds[x], label=''), fun.args[[x]]))
     table.data <- lapply(1:(nrow*ncol), function(x) paste0('<td>', do.call(colfun[x], fun.args[[x]]), '</td>'))
