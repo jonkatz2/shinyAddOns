@@ -43,7 +43,7 @@ tableInput <- function(inputId, label, nrow, ncol, dimnames, col.inputs, class=N
     table.data <- cbind(row.names, table.data)
     table.html <- sapply(1:(nrow+1), function(x) paste0('  <tr>\n    ', paste0(table.data[x,], collapse='\n    '), '\n  </tr>'))
     
-    paste0('<table class="', class,'">', paste0(table.html, collapse='\n  '), '</table>')
+    HTML(paste0('<table class="', class,'">', paste0(table.html, collapse='\n  '), '</table>'))
 }    
     
     
