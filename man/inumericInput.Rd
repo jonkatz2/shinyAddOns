@@ -2,6 +2,7 @@
 % Please edit documentation in R/inlineInputs.R
 \name{inumericInput}
 \alias{inumericInput}
+\title{Create a numeric input with a label either left, above, or both left and above the input. With no label it becomes an 'inline' input suitable for embedding in a table.}
 \usage{
 inumericInput(inputId, label, label2 = NULL, value, min = NA, max = NA,
   step = NA, label.style = "float:left;padding:0.5em 1em 0.5em 0em;",

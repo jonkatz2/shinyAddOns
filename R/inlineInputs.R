@@ -1,5 +1,5 @@
 #' @name inumericInput
-#' @description Create a numeric input with a label either left, above, or both left and above the input. With no label it becomes an 'inline' input suitable for embedding in a table.
+#' @title Create a numeric input with a label either left, above, or both left and above the input. With no label it becomes an 'inline' input suitable for embedding in a table.
 #' @param inputId The DOM ID.
 #' @param label The label to display to the left of the input.
 #' @param label2 The optional label to display to the above of the input.
@@ -46,7 +46,7 @@ inumericInput <- function (inputId, label, label2=NULL, value, min = NA, max = N
 }
 
 #' @name itextInput
-#' @description Create a text input with a label either left, above, or both left and above the input. With no label it becomes an 'inline' input suitable for embedding in a table.
+#' @title Create a text input with a label either left, above, or both left and above the input. With no label it becomes an 'inline' input suitable for embedding in a table.
 #' @param inputId The DOM ID.
 #' @param label The label to display to the left of the input.
 #' @param label2 The optional label to display to the above of the input.
@@ -83,7 +83,7 @@ itextInput <- function (inputId, label, label2=NULL, value = "", width = NULL, p
 
 
 #' @name iradioButtons
-#' @description Create a radio button input with a label to the left of the input. With no label it becomes an 'inline' input suitable for embedding in a table.
+#' @title Create a radio button input with a label to the left of the input. With no label it becomes an 'inline' input suitable for embedding in a table.
 #' @param inputId The DOM ID.
 #' @param label The label to display to the left of the input.
 #' @param choices Named or unnamed character vector of selectable choices.

@@ -2,6 +2,7 @@
 % Please edit documentation in R/inlineInputs.R
 \name{itextInput}
 \alias{itextInput}
+\title{Create a text input with a label either left, above, or both left and above the input. With no label it becomes an 'inline' input suitable for embedding in a table.}
 \usage{
 itextInput(inputId, label, label2 = NULL, value = "", width = NULL,
   placeholder = NULL,

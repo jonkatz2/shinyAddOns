@@ -2,6 +2,7 @@
 % Please edit documentation in R/inlineInputs.R
 \name{iradioButtons}
 \alias{iradioButtons}
+\title{Create a radio button input with a label to the left of the input. With no label it becomes an 'inline' input suitable for embedding in a table.}
 \usage{
 iradioButtons(inputId, label, choices, selected = NULL, inline = FALSE,
   width = NULL, padding = "0.5em 1em 0.5em 0em", thin = FALSE,
