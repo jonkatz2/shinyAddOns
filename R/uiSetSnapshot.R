@@ -74,7 +74,7 @@ uiSetSnapshot <- function(snapshot, sess){
             al <- list(session=sess, inputId=id, selected=val)
         } else if(func == 'dateRangeInput') {
             al <- list(session=sess, inputId=id, start=value[1], end=value[2])
-        } else al <- list()
+        } 
         # Link input function with correct update function
         uf <- switch(func, 
             textInput=shiny::updateTextInput, 
@@ -85,6 +85,7 @@ uiSetSnapshot <- function(snapshot, sess){
             radioButtons=shiny::updateRadioButtons,
             dateInput=shiny::updateDateInput,
             dateRangeInput=shiny::updateDateRangeInput,
+            sliderInput=shiny::updateSliderInput,
             fileInput=fiErr
         )
         # Safeguard the call constructor to avoid using NULL as uf
