@@ -74,7 +74,7 @@ uiSetSnapshot <- function(snapshot, sess){
             al <- list(session=sess, inputId=id, selected=val)
         } else if(func == 'dateRangeInput') {
             al <- list(session=sess, inputId=id, start=value[1], end=value[2])
-        } el al <- list()
+        } else al <- list()
         # Link input function with correct update function
         uf <- switch(func, 
             textInput=shiny::updateTextInput, 
