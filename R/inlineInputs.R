@@ -106,7 +106,7 @@ iradioButtons <- function (inputId, label, choices, selected = NULL, inline = FA
     selected <- if (is.null(selected)) 
         choices[[1]]
     else {
-        shiny::validateSelected(selected, choices, inputId)
+        shiny:::validateSelected(selected, choices, inputId)
     }
     if (length(selected) > 1) 
         stop("The 'selected' argument must be of length 1")

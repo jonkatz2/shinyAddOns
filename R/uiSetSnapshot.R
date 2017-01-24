@@ -68,7 +68,7 @@ uiSetSnapshot <- function(snapshot, sess){
         id <- names(snapshot)[x]
         val <- snapshot[[x]][['value']]
         # Reconstruct appropriate argument list
-        if(func %in% c('textInput', 'numericInput', 'checkboxInput', 'dateInput', 'sliderInput')) { 
+        if(func %in% c('textInput', 'textareaInput', 'numericInput', 'checkboxInput', 'dateInput', 'sliderInput')) { 
             al <- list(session=sess, inputId=id, value=val)
         } else if(func %in% c('selectInput', 'checkboxGroupInput', 'radioButtons')) {
             al <- list(session=sess, inputId=id, selected=val)
@@ -78,6 +78,7 @@ uiSetSnapshot <- function(snapshot, sess){
         # Link input function with correct update function
         uf <- switch(func, 
             textInput=shiny::updateTextInput, 
+            textareaInput=shiny::updateTextareaInput, 
             numericInput=shiny::updateNumericInput, 
             checkboxInput=shiny::updateCheckboxInput, 
             selectInput=shiny::updateSelectInput,
