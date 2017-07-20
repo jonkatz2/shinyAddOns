@@ -22,7 +22,10 @@
 bsModal2 <- function (id, title, trigger, ..., class=NULL, size) 
 {
     if (!missing(size)) {
-        if (size == "large") {
+        if (size == "mega") {
+            size = "modal-mega"
+        }
+        else if (size == "large") {
             size = "modal-lg"
         }
         else if (size == "small") {
